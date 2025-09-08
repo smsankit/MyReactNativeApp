@@ -6,4 +6,7 @@ export const ScreenName = {
   ACCOUNTS: 'Account',
   CART: 'Cart',
   WISHLIST: 'Wishlist',
+  WEATHER: "Weather",
+  PRODUCTS: "Products",
+  EXPENCE: "Expence",
 };

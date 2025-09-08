@@ -6,7 +6,7 @@ const LoadingComponent = () => {
   return (
     <View style={styles.loadingContainer}>
       <ActivityIndicator size={60} />
-      <Text style={styles.loadingText}>Loading news…</Text>
+      <Text style={styles.loadingText}>Loading…</Text>
     </View>
   );
 };

@@ -1,13 +1,13 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import WishlistScreen from '../screens/wishlist';
-import CartScreen from '../screens/cart';
 import AccountScreen from '../screens/account';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TabNavigatorProps } from './type/tabprops.type';
 import { ScreenName } from './screenName';
-import HomeScreen from '../screens/home';
 import NewsScreen from '../screens/news';
+import WeatherDashboardScreen from '../screens/weather/WeatherDashboardScreen';
+import ProductListScreen from '../screens/product/ProductListScreen';
+import { ExpenseScreen } from '../screens/expence/expense';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,10 +18,14 @@ const getTabbarIcon = (
   size: number,
 ) => {
   let iconName: string;
-  if (routeName === ScreenName.WISHLIST) {
+  if (routeName === ScreenName.WEATHER) {
     iconName = focused ? 'people' : 'people-outline';
-  } else if (routeName === ScreenName.CART) {
+  } else if (routeName === ScreenName.PRODUCTS) {
     iconName = focused ? 'home' : 'home-outline';
+  } else if (routeName === ScreenName.PRODUCTS) {
+    iconName = focused ? 'home' : 'home-outline';
+  } else if (routeName === ScreenName.EXPENCE) {
+    iconName = focused ? 'cash' : 'cash-outline';
   } else {
     iconName = focused ? 'newspaper' : 'newspaper-outline';
   }
@@ -61,8 +65,12 @@ export const TabNavigator: React.FC<TabNavigatorProps> = _props => {
       })}
     >
       <Tab.Screen name={ScreenName.HOME} component={NewsScreen} />
-      <Tab.Screen name={ScreenName.WISHLIST} component={WishlistScreen} />
-      <Tab.Screen name={ScreenName.CART} component={CartScreen} />
+      <Tab.Screen
+        name={ScreenName.WEATHER}
+        component={WeatherDashboardScreen}
+      />
+      <Tab.Screen name={ScreenName.PRODUCTS} component={ProductListScreen} />
+      <Tab.Screen name={ScreenName.EXPENCE} component={ExpenseScreen} />
       <Tab.Screen name={ScreenName.ACCOUNTS} component={AccountScreen} />
     </Tab.Navigator>
   );

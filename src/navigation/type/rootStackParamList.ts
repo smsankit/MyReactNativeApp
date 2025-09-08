@@ -11,6 +11,9 @@ export type RootStackParamList = {
   [ScreenName.CART]: undefined;
   [ScreenName.WISHLIST]: undefined;
   [ScreenName.ACCOUNTS]: undefined;
+  [ScreenName.WEATHER]: undefined;
+  [ScreenName.PRODUCTS]: undefined;
+  [ScreenName.EXPENCE]: undefined;
 };
 
 export type ScreenProps<Route extends keyof RootStackParamList> = {
